@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lazzy.Core\Lazzy.Core.csproj" />
+      <ProjectReference Include="..\Lazzy.Providers.Demo\Lazzy.Providers.Demo.csproj" />
+    </ItemGroup>
+
+    <PropertyGroup>
+    </PropertyGroup>
+
+</Project>
