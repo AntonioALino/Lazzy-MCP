@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Lazzy.Abstractions/Lazzy.Abstractions.csproj" />
+    <Project Path="src/Lazzy.Core/Lazzy.Core.csproj" />
+    <Project Path="src/Lazzy.Providers.Demo/Lazzy.Providers.Demo.csproj" />
+    <Project Path="src/Lazzy.Server/Lazzy.Server.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Lazzy.Core.Tests/Lazzy.Core.Tests.csproj" />
+    <Project Path="tests/Lazzy.Providers.Contract/Lazzy.Providers.Contract.csproj" />
+  </Folder>
+</Solution>
