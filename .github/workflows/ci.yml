@@ -33,6 +33,9 @@ jobs:
     name: build (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: Lazzy
     strategy:
       fail-fast: false
       matrix:
