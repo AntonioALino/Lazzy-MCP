@@ -5,7 +5,13 @@
       <ProjectReference Include="..\Lazzy.Providers.Demo\Lazzy.Providers.Demo.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Hosting" />
+      <PackageReference Include="ModelContextProtocol" />
+    </ItemGroup>
+
     <PropertyGroup>
+        <OutputType>Exe</OutputType>
     </PropertyGroup>
 
 </Project>
