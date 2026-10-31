@@ -15,13 +15,13 @@ public sealed class BusinessCalendar
         ArgumentNullException.ThrowIfNull(holidays);
         _holidays = [.. holidays];
     }
-    
+
     /// <summary>A calendar with no holidays: only Saturdays and Sundays are skipped.</summary>
     public static BusinessCalendar WeekendsOnly { get; } = new([]);
-    
+
     public bool IsBusinessDay(DateOnly day) =>
         day.DayOfWeek is not (DayOfWeek.Saturday or DayOfWeek.Sunday) && !_holidays.Contains(day);
-    
+
     /// <summary>The closest business day before <paramref name="day"/>.</summary>
     /// <exception cref="InvalidOperationException">
     /// No business day exists in the <see cref="MaxLookBackDays"/> days before <paramref name="day"/>,
