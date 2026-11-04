@@ -154,12 +154,15 @@ A partir daí, o comando no cliente passa a ser simplesmente `lazzy-mcp` (adicio
 ## Configuração
 
 ```yaml
-timeZone: America/Sao_Paulo        # id IANA; define o que é "ontem"
+timeZone: America/Sao_Paulo        # id IANA; define o que é "ontem" (padrão: o desta máquina)
 holidays: [2026-11-02, 2026-11-20] # dias não úteis, yyyy-MM-dd
 
 identity:                          # quem é "eu" em cada provedor
-  github: seu-login-no-github
-  ado: voce@empresa.com            # unique name no Azure DevOps, normalmente o e-mail de login
+  github:
+    login: seu-login-no-github
+    emails: [voce@pessoal.dev]     # opcional: e-mails de commit não vinculados à sua conta do GitHub
+  ado:                             # opcional: por padrão, o usuário do token
+    login: voce@empresa.com        # unique name no Azure DevOps, normalmente o e-mail de login
 
 projects:
   - name: Checkout

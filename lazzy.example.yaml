@@ -1,0 +1,27 @@
+# Lazzy MCP configuration. Copy this file to lazzy.yaml and describe your projects.
+# This file holds no secrets: tokens are always read from environment variables.
+
+# IANA time zone id; decides what "yesterday" means. Remove the line to use this machine's time zone.
+timeZone: America/Sao_Paulo
+
+# Non-working days, in yyyy-MM-dd. "Yesterday" skips them, as it skips weekends.
+holidays: [2026-11-02, 2026-11-20]
+
+# Who "me" is on each provider.
+identity:
+  github:
+    login: your-github-login
+    # Optional: commit emails not linked to your GitHub account, so those commits are still yours.
+    emails: [you@personal.dev]
+  # Optional: without it, Azure Boards uses the user of the token.
+  ado:
+    login: you@company.com   # Azure DevOps unique name, usually your sign-in email
+
+# Every project this server may query. Nothing outside these targets is ever read.
+projects:
+  - name: Checkout
+    aliases: [checkout, payments]   # names people actually type; matched without regard to case
+    targets:                        # where the project lives: provider:location
+      - github:my-org/checkout-api  # owner/repo
+      - github:my-org/checkout-web
+      - ado:my-org/Checkout         # organization/project

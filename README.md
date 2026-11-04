@@ -154,12 +154,15 @@ The client command then becomes simply `lazzy-mcp` (add `--demo` to try it).
 ## Configuration
 
 ```yaml
-timeZone: America/Sao_Paulo        # IANA id; decides what "yesterday" means
+timeZone: America/Sao_Paulo        # IANA id; decides what "yesterday" means (default: this machine's)
 holidays: [2026-11-02, 2026-11-20] # non-working days, yyyy-MM-dd
 
 identity:                          # who "me" is on each provider
-  github: your-github-login
-  ado: you@company.com             # Azure DevOps unique name, usually your sign-in email
+  github:
+    login: your-github-login
+    emails: [you@personal.dev]     # optional: commit emails not linked to your GitHub account
+  ado:                             # optional: by default, the user of the token
+    login: you@company.com         # Azure DevOps unique name, usually your sign-in email
 
 projects:
   - name: Checkout
