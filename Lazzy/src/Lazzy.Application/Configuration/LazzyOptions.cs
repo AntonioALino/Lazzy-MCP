@@ -4,7 +4,7 @@ namespace Lazzy.Application.Configuration;
 
 /// <summary>
 /// The configuration of one Lazzy server, as written in <c>lazzy.yaml</c>. Values are kept as the user wrote them;
-/// <see cref="LazzyOptionsValidator"/> decides whether they make sense.
+/// <see cref="Validation.LazzyOptionsValidator"/> decides whether they make sense.
 /// </summary>
 public sealed record LazzyOptions
 {

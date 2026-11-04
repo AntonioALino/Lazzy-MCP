@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Lazzy.Domain;
+namespace Lazzy.Domain.Services;
 
 
 /// <summary>Decides which days are business days: weekends and configured holidays are not.</summary>

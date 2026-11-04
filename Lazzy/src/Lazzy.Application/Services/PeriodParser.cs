@@ -1,7 +1,8 @@
 ﻿using System.Globalization;
-using Lazzy.Domain;
+using Lazzy.Domain.Services;
+using Lazzy.Domain.ValueObjects;
 
-namespace Lazzy.Application.Periods;
+namespace Lazzy.Application.Services;
 
 /// <summary>
 /// Turns the loose period strings people and models use ("yesterday", "7d", "2026-10-01")

@@ -1,4 +1,4 @@
-namespace Lazzy.Application.Configuration;
+namespace Lazzy.Application.Validation;
 
 /// <summary>One thing wrong with the configuration.</summary>
 /// <param name="Path">Where the problem is, such as <c>projects[1].targets[0]</c>.</param>

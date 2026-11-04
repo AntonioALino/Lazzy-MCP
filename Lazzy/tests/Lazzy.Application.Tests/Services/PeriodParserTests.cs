@@ -1,8 +1,8 @@
-﻿using Lazzy.Application.Periods;
-using Lazzy.Domain;
+﻿using Lazzy.Application.Services;
+using Lazzy.Domain.Services;
 using Microsoft.Extensions.Time.Testing;
 
-namespace Lazzy.Application.Tests;
+namespace Lazzy.Application.Tests.Services;
 
 public sealed class PeriodParserTests
 {

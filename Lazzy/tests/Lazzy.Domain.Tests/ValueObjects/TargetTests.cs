@@ -1,4 +1,6 @@
-namespace Lazzy.Domain.Tests;
+using Lazzy.Domain.ValueObjects;
+
+namespace Lazzy.Domain.Tests.ValueObjects;
 
 public sealed class TargetTests
 {

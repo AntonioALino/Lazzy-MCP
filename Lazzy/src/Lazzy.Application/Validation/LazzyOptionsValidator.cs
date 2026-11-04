@@ -1,7 +1,8 @@
 using System.Globalization;
-using Lazzy.Domain;
+using Lazzy.Application.Configuration;
+using Lazzy.Domain.ValueObjects;
 
-namespace Lazzy.Application.Configuration;
+namespace Lazzy.Application.Validation;
 
 /// <summary>
 /// Checks a <see cref="LazzyOptions"/> and reports every problem at once,

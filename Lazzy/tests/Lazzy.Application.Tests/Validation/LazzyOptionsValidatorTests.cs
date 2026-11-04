@@ -1,6 +1,7 @@
 using Lazzy.Application.Configuration;
+using Lazzy.Application.Validation;
 
-namespace Lazzy.Application.Tests.Configuration;
+namespace Lazzy.Application.Tests.Validation;
 
 public sealed class LazzyOptionsValidatorTests
 {
