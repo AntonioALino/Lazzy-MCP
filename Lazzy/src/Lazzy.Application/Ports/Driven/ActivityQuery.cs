@@ -1,4 +1,4 @@
-using Lazzy.Domain.ValueObjects;
+using Lazzy.Domain;
 
 namespace Lazzy.Application.Ports.Driven;
 

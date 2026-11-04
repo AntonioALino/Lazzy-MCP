@@ -6,6 +6,7 @@
 
     <ItemGroup>
         <PackageReference Include="coverlet.collector" />
+        <PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" />
         <PackageReference Include="xunit" />
         <PackageReference Include="xunit.runner.visualstudio" />
@@ -17,6 +18,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\Lazzy.Domain\Lazzy.Domain.csproj" />
+      <ProjectReference Include="..\..\src\Lazzy.Application\Lazzy.Application.csproj" />
       <ProjectReference Include="..\..\src\Adapters\Driven\Lazzy.Adapters.Demo\Lazzy.Adapters.Demo.csproj" />
     </ItemGroup>
 

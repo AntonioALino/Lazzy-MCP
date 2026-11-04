@@ -323,6 +323,7 @@
       "lazzy.adapters.demo": {
         "type": "Project",
         "dependencies": {
+          "Lazzy.Application": "[1.0.0, )",
           "Lazzy.Domain": "[1.0.0, )"
         }
       },

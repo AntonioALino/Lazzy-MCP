@@ -67,4 +67,6 @@ Dependencies always point **inward**: adapters depend on the hexagon, never the 
 2. Implement the driven ports that provider supports (version control, task board, or both).
 3. Register it in the composition root.
 4. Reference it from `Lazzy.Architecture.Tests`, so the dependency rules inspect it.
-5. Make it pass `Lazzy.Adapters.Contract`.
+5. Subclass `ActivitySourceContract` from `Lazzy.Adapters.Contract` in the adapter's tests and make every rule pass
+   (see [its README](../Lazzy/tests/Lazzy.Adapters.Contract/README.md)).
+6. Document its token scopes and target format in `docs/providers/<id>.md`.

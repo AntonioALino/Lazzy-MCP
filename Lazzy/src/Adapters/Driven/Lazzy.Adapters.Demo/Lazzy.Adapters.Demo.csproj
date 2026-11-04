@@ -2,6 +2,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\Lazzy.Domain\Lazzy.Domain.csproj" />
+      <ProjectReference Include="..\..\..\Lazzy.Application\Lazzy.Application.csproj" />
     </ItemGroup>
 
     <PropertyGroup>
