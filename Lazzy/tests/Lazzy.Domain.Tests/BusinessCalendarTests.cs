@@ -1,4 +1,4 @@
-﻿namespace Lazzy.Core.Tests;
+﻿namespace Lazzy.Domain.Tests;
 
 public sealed class BusinessCalendarTests
 {

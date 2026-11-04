@@ -16,8 +16,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Lazzy.Abstractions\Lazzy.Abstractions.csproj" />
-      <ProjectReference Include="..\..\src\Lazzy.Providers.Demo\Lazzy.Providers.Demo.csproj" />
+      <ProjectReference Include="..\..\src\Lazzy.Domain\Lazzy.Domain.csproj" />
+      <ProjectReference Include="..\..\src\Adapters\Driven\Lazzy.Adapters.Demo\Lazzy.Adapters.Demo.csproj" />
     </ItemGroup>
 
 </Project>

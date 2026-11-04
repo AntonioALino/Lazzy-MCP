@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <ItemGroup>
-      <ProjectReference Include="..\Lazzy.Abstractions\Lazzy.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\Lazzy.Domain\Lazzy.Domain.csproj" />
     </ItemGroup>
 
     <PropertyGroup>

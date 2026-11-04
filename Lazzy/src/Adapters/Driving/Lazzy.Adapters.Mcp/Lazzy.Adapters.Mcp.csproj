@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <ItemGroup>
-      <ProjectReference Include="..\Lazzy.Core\Lazzy.Core.csproj" />
-      <ProjectReference Include="..\Lazzy.Providers.Demo\Lazzy.Providers.Demo.csproj" />
+      <ProjectReference Include="..\..\..\Lazzy.Application\Lazzy.Application.csproj" />
+      <ProjectReference Include="..\..\Driven\Lazzy.Adapters.Demo\Lazzy.Adapters.Demo.csproj" />
     </ItemGroup>
 
     <ItemGroup>
