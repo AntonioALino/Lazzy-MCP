@@ -36,6 +36,13 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
         run: |
+          dotnet-sonarscanner begin \
+            /k:"lazzy-mcp" \
+            /d:sonar.host.url="${SONAR_HOST_URL}" \
+            /d:sonar.token="${SONAR_TOKEN}" \
+            /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
+          dotnet build Lazzy.slnx --configuration Release
           dotnet test Lazzy.slnx --configuration Release --no-build \
             --collect:"XPlat Code Coverage" \
             --settings coverlet.runsettings
+          dotnet-sonarscanner end /d:sonar.token="${SONAR_TOKEN}"
