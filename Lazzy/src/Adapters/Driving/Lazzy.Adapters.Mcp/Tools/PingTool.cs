@@ -2,7 +2,7 @@
 using System.Globalization;
 using ModelContextProtocol.Server;
 
-namespace Lazzy.Server.Tools;
+namespace Lazzy.Adapters.Mcp.Tools;
 
 [McpServerToolType]
 internal static class PingTool

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="coverlet.collector" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="xunit" />
+        <PackageReference Include="xunit.runner.visualstudio" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Xunit" />
+    </ItemGroup>
+
+    <!-- Every production project, so the rules can inspect it. A new driven adapter must be added here. -->
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Lazzy.Domain\Lazzy.Domain.csproj" />
+      <ProjectReference Include="..\..\src\Lazzy.Application\Lazzy.Application.csproj" />
+      <ProjectReference Include="..\..\src\Adapters\Driving\Lazzy.Adapters.Mcp\Lazzy.Adapters.Mcp.csproj" />
+      <ProjectReference Include="..\..\src\Adapters\Driven\Lazzy.Adapters.Demo\Lazzy.Adapters.Demo.csproj" />
+    </ItemGroup>
+
+</Project>

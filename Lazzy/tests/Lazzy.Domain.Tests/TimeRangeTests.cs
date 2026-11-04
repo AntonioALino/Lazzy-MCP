@@ -1,6 +1,6 @@
-﻿using Lazzy.Abstractions;
+﻿using Lazzy.Domain;
 
-namespace Lazzy.Core.Tests;
+namespace Lazzy.Domain.Tests;
 
 public sealed class TimeRangeTests
 {
