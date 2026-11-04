@@ -1,6 +1,6 @@
-﻿using Lazzy.Domain;
+﻿using Lazzy.Domain.ValueObjects;
 
-namespace Lazzy.Domain.Tests;
+namespace Lazzy.Domain.Tests.ValueObjects;
 
 public sealed class TimeRangeTests
 {

@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace Lazzy.Domain;
+namespace Lazzy.Domain.ValueObjects;
 
 /// <summary>
 /// A place where a project lives on one provider, written as <c>provider:location</c>,

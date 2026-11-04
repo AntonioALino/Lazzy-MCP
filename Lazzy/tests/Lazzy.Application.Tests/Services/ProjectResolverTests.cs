@@ -1,7 +1,7 @@
 using Lazzy.Application.Configuration;
-using Lazzy.Application.Projects;
+using Lazzy.Application.Services;
 
-namespace Lazzy.Application.Tests.Projects;
+namespace Lazzy.Application.Tests.Services;
 
 public sealed class ProjectResolverTests
 {

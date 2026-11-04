@@ -1,6 +1,6 @@
 using Lazzy.Application.Configuration;
 
-namespace Lazzy.Application.Projects;
+namespace Lazzy.Application.Services;
 
 /// <summary>Finds a configured project by its name or one of its aliases, without regard to case.</summary>
 public sealed class ProjectResolver

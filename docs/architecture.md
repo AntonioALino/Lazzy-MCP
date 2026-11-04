@@ -26,8 +26,8 @@ Everything that talks to the outside world is an **adapter** plugged into a **po
 
 | Project | Folder | Hexagonal role | Contains | May reference |
 |---|---|---|---|---|
-| `Lazzy.Domain` | `src/Lazzy.Domain` | Inner hexagon: **domain model** | Value objects such as `TimeRange` and `BusinessCalendar` | nothing |
-| `Lazzy.Application` | `src/Lazzy.Application` | Hexagon: **use cases, ports** and application services | `Ports/Driving` (one interface per use case), `Ports/Driven` (what providers implement), `UseCases`, `Periods/PeriodParser`, the configuration model | `Lazzy.Domain` |
+| `Lazzy.Domain` | `src/Lazzy.Domain` | Inner hexagon: **domain model** | `ValueObjects/` (`TimeRange`, `Target`, `ActivityEvent`), `Enums/` (`ActivityKind`), `Services/` (domain rules such as `BusinessCalendar`); `Entities/` when the first entity with an identity appears | nothing |
+| `Lazzy.Application` | `src/Lazzy.Application` | Hexagon: **use cases, ports** and application services | `Ports/Driving` (one interface per use case), `Ports/Driven` (what providers implement), `UseCases/`, `Services/` (`ActivityService`, `PeriodParser`, `ProjectResolver`), `Configuration/` (model only), `Validation/` (`LazzyOptionsValidator`), `Models/` (results such as `ActivityReport`) | `Lazzy.Domain` |
 | `Lazzy.Adapters.<Provider>` | `src/Adapters/Driven/` | **Driven (secondary) adapters** | One project per provider: `Demo` today, `GitHub` and `AzureDevOps` next | `Lazzy.Domain` and the driven ports of `Lazzy.Application` |
 | `Lazzy.Adapters.Mcp` | `src/Adapters/Driving/` | **Driving (primary) adapter** and **composition root** | MCP tools and prompts that translate protocol calls into driving port calls; `Program.cs` wires every adapter to its port | everything, but only `Program.cs` uses use cases and driven adapters |
 
