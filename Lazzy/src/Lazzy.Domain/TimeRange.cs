@@ -1,4 +1,4 @@
-﻿namespace Lazzy.Abstractions;
+﻿namespace Lazzy.Domain;
 
 /// <summary>
 /// A half-open interval of time: it includes <see cref="From"/> and excludes <see cref="To"/>.

@@ -1,12 +1,19 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="src/Lazzy.Abstractions/Lazzy.Abstractions.csproj" />
-    <Project Path="src/Lazzy.Core/Lazzy.Core.csproj" />
-    <Project Path="src/Lazzy.Providers.Demo/Lazzy.Providers.Demo.csproj" />
-    <Project Path="src/Lazzy.Server/Lazzy.Server.csproj" />
+    <Project Path="src/Lazzy.Domain/Lazzy.Domain.csproj" />
+    <Project Path="src/Lazzy.Application/Lazzy.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Adapters/" />
+  <Folder Name="/src/Adapters/Driving/">
+    <Project Path="src/Adapters/Driving/Lazzy.Adapters.Mcp/Lazzy.Adapters.Mcp.csproj" />
+  </Folder>
+  <Folder Name="/src/Adapters/Driven/">
+    <Project Path="src/Adapters/Driven/Lazzy.Adapters.Demo/Lazzy.Adapters.Demo.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/Lazzy.Core.Tests/Lazzy.Core.Tests.csproj" />
-    <Project Path="tests/Lazzy.Providers.Contract/Lazzy.Providers.Contract.csproj" />
+    <Project Path="tests/Lazzy.Domain.Tests/Lazzy.Domain.Tests.csproj" />
+    <Project Path="tests/Lazzy.Application.Tests/Lazzy.Application.Tests.csproj" />
+    <Project Path="tests/Lazzy.Adapters.Contract/Lazzy.Adapters.Contract.csproj" />
+    <Project Path="tests/Lazzy.Architecture.Tests/Lazzy.Architecture.Tests.csproj" />
   </Folder>
 </Solution>

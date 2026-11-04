@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Lazzy.Core\Lazzy.Core.csproj" />
+      <ProjectReference Include="..\..\src\Lazzy.Application\Lazzy.Application.csproj" />
     </ItemGroup>
 
 </Project>

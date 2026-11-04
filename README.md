@@ -50,7 +50,7 @@ These are deliberate design decisions, not temporary limitations:
 - **Local-first, no telemetry.** It runs on your machine. Your code, your board and your tokens never pass through a server of ours.
 - **Your token, your permissions.** Each person uses their own token, so Lazzy can only see what that person can already see in the provider. Access control is inherited, not reinvented.
 - **Teams, not leaderboards.** Metrics are aggregated per project. Lazzy will not rank people by number of PRs or commits: those numbers punish the people who review, mentor and investigate.
-- **Vendor-neutral.** Any git host, any board, any MCP client. Providers are small adapters anyone can add.
+- **Vendor-neutral.** Any git host, any board, any MCP client. Providers are small driven adapters anyone can add (see [Architecture](docs/architecture.md)).
 - **The numbers come from code, not from the model.** Tools compute every count and duration; the language model only explains them. LLMs are bad at counting, and a lead who catches one wrong number stops trusting the tool.
 
 ## What it can do today
@@ -90,7 +90,7 @@ Then register it in your MCP client in demo mode.
 **Claude Code**
 
 ```bash
-claude mcp add lazzy -- dotnet run --project /path/to/lazzy-mcp/src/Lazzy.Server -- --demo
+claude mcp add lazzy -- dotnet run --project /path/to/lazzy-mcp/src/Adapters/Driving/Lazzy.Adapters.Mcp -- --demo
 ```
 
 **Claude Desktop** (`claude_desktop_config.json`)
@@ -100,7 +100,7 @@ claude mcp add lazzy -- dotnet run --project /path/to/lazzy-mcp/src/Lazzy.Server
   "mcpServers": {
     "lazzy": {
       "command": "dotnet",
-      "args": ["run", "--project", "/path/to/lazzy-mcp/src/Lazzy.Server", "--", "--demo"]
+      "args": ["run", "--project", "/path/to/lazzy-mcp/src/Adapters/Driving/Lazzy.Adapters.Mcp", "--", "--demo"]
     }
   }
 }
@@ -114,7 +114,7 @@ claude mcp add lazzy -- dotnet run --project /path/to/lazzy-mcp/src/Lazzy.Server
     "lazzy": {
       "type": "stdio",
       "command": "dotnet",
-      "args": ["run", "--project", "/path/to/lazzy-mcp/src/Lazzy.Server", "--", "--demo"]
+      "args": ["run", "--project", "/path/to/lazzy-mcp/src/Adapters/Driving/Lazzy.Adapters.Mcp", "--", "--demo"]
     }
   }
 }
@@ -137,7 +137,7 @@ Ask *"what did I do since yesterday?"* or run `/daily`.
    ```bash
    claude mcp add lazzy \
      -e GITHUB_TOKEN=... -e AZURE_DEVOPS_PAT=... -e LAZZY_CONFIG=/path/to/lazzy.yaml \
-     -- dotnet run --project /path/to/lazzy-mcp/src/Lazzy.Server
+     -- dotnet run --project /path/to/lazzy-mcp/src/Adapters/Driving/Lazzy.Adapters.Mcp
    ```
 
 ### Installing as a .NET tool
@@ -145,7 +145,7 @@ Ask *"what did I do since yesterday?"* or run `/daily`.
 Until the package is published on NuGet, you can install it from source:
 
 ```bash
-dotnet pack src/Lazzy.Server -o ./nupkg
+dotnet pack src/Adapters/Driving/Lazzy.Adapters.Mcp -o ./nupkg
 dotnet tool install -g Lazzy.Mcp --add-source ./nupkg
 ```
 
@@ -192,11 +192,11 @@ Mixing can happen in only one situation: work and personal projects in the **sam
 ```bash
 claude mcp add lazzy-work \
   -e GITHUB_TOKEN=<work token> -e AZURE_DEVOPS_PAT=<work PAT> -e LAZZY_CONFIG=/path/to/lazzy.work.yaml \
-  -- dotnet run --project /path/to/lazzy-mcp/src/Lazzy.Server
+  -- dotnet run --project /path/to/lazzy-mcp/src/Adapters/Driving/Lazzy.Adapters.Mcp
 
 claude mcp add lazzy-personal \
   -e GITHUB_TOKEN=<personal token> -e LAZZY_CONFIG=/path/to/lazzy.personal.yaml \
-  -- dotnet run --project /path/to/lazzy-mcp/src/Lazzy.Server
+  -- dotnet run --project /path/to/lazzy-mcp/src/Adapters/Driving/Lazzy.Adapters.Mcp
 ```
 
 Each server knows only its own projects and its own tokens, so the two contexts never meet. MCP clients namespace tools and prompts by server name, so each context gets its own daily command (in Claude Code, for example, `/mcp__lazzy-work__daily`).
@@ -227,7 +227,7 @@ Metric definitions live in [docs/metrics.md](docs/metrics.md) so every number ca
 
 ## Contributing
 
-New providers are the most valuable contribution. An adapter is one class that depends only on `Lazzy.Abstractions`, and the contract test suite tells you when it is done. See [CONTRIBUTING.md](CONTRIBUTING.md).
+New providers are the most valuable contribution. A provider is a driven adapter: one class that implements a port from `Lazzy.Domain` and depends on nothing else in Lazzy, and the contract test suite tells you when it is done. See [docs/architecture.md](docs/architecture.md) for how the hexagon is laid out. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
